@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Built-In Node' }
+    agent any
 
     tools {
         nodejs 'NodeJs'   // use EXACT name shown in Manage Jenkins → Tools
