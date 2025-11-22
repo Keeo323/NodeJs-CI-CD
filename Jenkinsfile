@@ -1,9 +1,21 @@
 pipeline {
-    agent { docker { image 'node:24.11.1-alpine3.22' } }
+    agent any
+
+    tools {
+        nodejs 'NodeJS'   // Make sure you configured a NodeJS tool in Jenkins (Manage Jenkins → Tools)
+    }
+
     stages {
-        stage('build') {
+
+        stage('Checkout') {
             steps {
-                sh 'node --version'
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
             }
         }
     }
