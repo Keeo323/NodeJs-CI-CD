@@ -1,12 +1,11 @@
 pipeline {
-    agent {'Built-In Node'}
+    agent { label 'Built-In Node' }
 
     tools {
-        nodejs 'NodeJS'   // Make sure you configured a NodeJS tool in Jenkins (Manage Jenkins → Tools)
+        nodejs 'NodeJs'   // use EXACT name shown in Manage Jenkins → Tools
     }
 
     stages {
-
         stage('Checkout') {
             steps {
                 checkout scm
