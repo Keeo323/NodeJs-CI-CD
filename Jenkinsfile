@@ -1,5 +1,5 @@
 pipeline {
-    agent 'Built-In Node'
+    agent {'Built-In Node'}
 
     tools {
         nodejs 'NodeJS'   // Make sure you configured a NodeJS tool in Jenkins (Manage Jenkins → Tools)
